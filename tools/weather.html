@@ -1,0 +1,60 @@
+<div class="max-w-xl mx-auto flex flex-col items-center justify-start py-10 w-full animate-fade-in">
+    <h1 class="text-3xl font-light mb-8 text-gray-900 dark:text-white">Weather</h1>
+
+    <!-- Search Section -->
+    <div class="w-full relative mb-8">
+        <input
+            type="text"
+            id="weather-search-input"
+            placeholder="[ Search city... ]"
+            class="w-full bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 border border-gray-200 dark:border-gray-700 rounded-full px-6 py-4 pr-14 shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-shadow text-center text-lg placeholder-gray-400 dark:placeholder-gray-500"
+            autocomplete="off"
+        >
+        <button
+            id="weather-search-btn"
+            class="absolute right-4 top-1/2 transform -translate-y-1/2 p-2 text-gray-400 hover:text-indigo-500 dark:hover:text-indigo-400 transition-colors"
+            aria-label="Search"
+        >
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+        </button>
+    </div>
+
+    <!-- Status / Loading / Error Message -->
+    <div id="weather-status-msg" class="text-gray-500 dark:text-gray-400 text-sm mb-4 min-h-[1.25rem]">
+        <!-- Pulses when loading: animate-pulse -->
+    </div>
+
+    <!-- Weather Display Card (Hidden by Default) -->
+    <div id="weather-card" class="w-full bg-white dark:bg-gray-800 rounded-3xl shadow-sm border border-gray-100 dark:border-gray-700 overflow-hidden flex-col items-center p-8 hidden">
+        <h2 id="weather-city" class="text-2xl font-medium text-gray-900 dark:text-white mb-1">--</h2>
+        <p id="weather-country" class="text-gray-500 dark:text-gray-400 text-sm mb-6 uppercase tracking-wider">--</p>
+
+        <div class="flex flex-col items-center justify-center mb-6">
+            <span id="weather-temp" class="text-7xl font-light text-gray-900 dark:text-white tracking-tighter">--°C</span>
+            <span id="weather-condition" class="text-lg text-indigo-600 dark:text-indigo-400 mt-2 font-medium">--</span>
+        </div>
+
+        <div class="w-full grid grid-cols-2 gap-4 mt-4 border-t border-gray-100 dark:border-gray-700 pt-6">
+            <div class="flex flex-col items-center">
+                <span class="text-xs text-gray-400 dark:text-gray-500 uppercase tracking-wider mb-1">Humidity</span>
+                <span id="weather-humidity" class="text-lg font-medium text-gray-700 dark:text-gray-300">--%</span>
+            </div>
+            <div class="flex flex-col items-center">
+                <span class="text-xs text-gray-400 dark:text-gray-500 uppercase tracking-wider mb-1">Wind Speed</span>
+                <span id="weather-wind" class="text-lg font-medium text-gray-700 dark:text-gray-300">-- km/h</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-in {
+        animation: fadeIn 0.4s ease-out forwards;
+    }
+</style>
