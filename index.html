@@ -42,11 +42,11 @@
         }
     </style>
 </head>
-<body class="bg-zinc-950 text-zinc-400 min-h-screen flex antialiased">
+<body class="bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100 min-h-screen flex antialiased">
 
     <!-- Sidebar / Navigation -->
-    <aside class="w-64 border-r border-zinc-800 bg-zinc-900/50 backdrop-blur-md flex flex-col fixed h-full z-20">
-        <div class="p-6 flex justify-between items-center border-b border-zinc-800">
+    <aside class="w-64 border-r border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950 flex flex-col fixed h-full z-20">
+        <div class="p-6 flex justify-between items-center border-b border-gray-200 dark:border-gray-800">
             <div class="text-2xl font-bold tracking-tight">PlayHub</div>
             <button id="theme-toggle" class="p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" aria-label="Toggle Theme">
                 <svg id="theme-icon-dark" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
@@ -54,42 +54,42 @@
             </button>
         </div>
         <nav class="flex-grow p-4 space-y-2 overflow-y-auto">
-            <button data-view="home" class="nav-btn w-full text-left px-4 py-2 rounded-lg font-medium bg-zinc-800 text-white transition-colors">Home (All)</button>
+            <button data-view="home" class="nav-btn w-full text-left px-4 py-2 rounded-lg font-medium bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white transition-colors">Home (All)</button>
 
-            <div class="pt-4 pb-2 text-xs font-semibold text-zinc-600 uppercase tracking-wider">Tools</div>
-            <button data-view="tools/weather" class="nav-btn w-full text-left px-4 py-2 rounded-lg text-zinc-500 hover:text-zinc-300 transition-colors">Weather App</button>
-            <button data-view="tools/calc-standard" class="nav-btn w-full text-left px-4 py-2 rounded-lg text-zinc-500 hover:text-zinc-300 transition-colors">Standard Calculator</button>
-            <button data-view="tools/calc-trig" class="nav-btn w-full text-left px-4 py-2 rounded-lg text-zinc-500 hover:text-zinc-300 transition-colors">Trigonometry</button>
-            <button data-view="tools/percentage" class="nav-btn w-full text-left px-4 py-2 rounded-lg text-zinc-500 hover:text-zinc-300 transition-colors">Percentage Calc</button>
-            <button data-view="tools/unit-converter" class="nav-btn w-full text-left px-4 py-2 rounded-lg text-zinc-500 hover:text-zinc-300 transition-colors">Unit Converter</button>
-            <button data-view="tools/rgb-hex" class="nav-btn w-full text-left px-4 py-2 rounded-lg text-zinc-500 hover:text-zinc-300 transition-colors">RGB/HEX Gen</button>
-            <button data-view="tools/base-converter" class="nav-btn w-full text-left px-4 py-2 rounded-lg text-zinc-500 hover:text-zinc-300 transition-colors">Base Converter</button>
-            <button data-view="tools/base64" class="nav-btn w-full text-left px-4 py-2 rounded-lg text-zinc-500 hover:text-zinc-300 transition-colors">Base64 Encoder</button>
-            <button data-view="tools/password" class="nav-btn w-full text-left px-4 py-2 rounded-lg text-zinc-500 hover:text-zinc-300 transition-colors">Password Gen</button>
-            <button data-view="tools/aspect-ratio" class="nav-btn w-full text-left px-4 py-2 rounded-lg text-zinc-500 hover:text-zinc-300 transition-colors">Aspect Ratio Calc</button>
-            <button data-view="tools/word-counter" class="nav-btn w-full text-left px-4 py-2 rounded-lg text-zinc-500 hover:text-zinc-300 transition-colors">Word Counter</button>
-            <button data-view="tools/timer" class="nav-btn w-full text-left px-4 py-2 rounded-lg text-zinc-500 hover:text-zinc-300 transition-colors">Timer/Stopwatch</button>
-            <button data-view="tools/json-formatter" class="nav-btn w-full text-left px-4 py-2 rounded-lg text-zinc-500 hover:text-zinc-300 transition-colors">JSON Formatter</button>
-            <button data-view="tools/randomizer" class="nav-btn w-full text-left px-4 py-2 rounded-lg text-zinc-500 hover:text-zinc-300 transition-colors">Randomizer</button>
-            <button data-view="tools/health-calc" class="nav-btn w-full text-left px-4 py-2 rounded-lg text-zinc-500 hover:text-zinc-300 transition-colors">BMR/BMI Calc</button>
-            <button data-view="tools/diff-checker" class="nav-btn w-full text-left px-4 py-2 rounded-lg text-zinc-500 hover:text-zinc-300 transition-colors">Diff Checker</button>
+            <div class="pt-4 pb-2 text-xs font-semibold text-gray-500 uppercase tracking-wider">Tools</div>
+            <button data-view="tools/weather" class="nav-btn w-full text-left px-4 py-2 rounded-lg text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Weather App</button>
+            <button data-view="tools/calc-standard" class="nav-btn w-full text-left px-4 py-2 rounded-lg text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Standard Calculator</button>
+            <button data-view="tools/calc-trig" class="nav-btn w-full text-left px-4 py-2 rounded-lg text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Trigonometry</button>
+            <button data-view="tools/percentage" class="nav-btn w-full text-left px-4 py-2 rounded-lg text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Percentage Calc</button>
+            <button data-view="tools/unit-converter" class="nav-btn w-full text-left px-4 py-2 rounded-lg text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Unit Converter</button>
+            <button data-view="tools/rgb-hex" class="nav-btn w-full text-left px-4 py-2 rounded-lg text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">RGB/HEX Gen</button>
+            <button data-view="tools/base-converter" class="nav-btn w-full text-left px-4 py-2 rounded-lg text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Base Converter</button>
+            <button data-view="tools/base64" class="nav-btn w-full text-left px-4 py-2 rounded-lg text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Base64 Encoder</button>
+            <button data-view="tools/password" class="nav-btn w-full text-left px-4 py-2 rounded-lg text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Password Gen</button>
+            <button data-view="tools/aspect-ratio" class="nav-btn w-full text-left px-4 py-2 rounded-lg text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Aspect Ratio Calc</button>
+            <button data-view="tools/word-counter" class="nav-btn w-full text-left px-4 py-2 rounded-lg text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Word Counter</button>
+            <button data-view="tools/timer" class="nav-btn w-full text-left px-4 py-2 rounded-lg text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Timer/Stopwatch</button>
+            <button data-view="tools/json-formatter" class="nav-btn w-full text-left px-4 py-2 rounded-lg text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">JSON Formatter</button>
+            <button data-view="tools/randomizer" class="nav-btn w-full text-left px-4 py-2 rounded-lg text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Randomizer</button>
+            <button data-view="tools/health-calc" class="nav-btn w-full text-left px-4 py-2 rounded-lg text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">BMR/BMI Calc</button>
+            <button data-view="tools/diff-checker" class="nav-btn w-full text-left px-4 py-2 rounded-lg text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Diff Checker</button>
 
-            <div class="pt-4 pb-2 text-xs font-semibold text-zinc-600 uppercase tracking-wider">Games</div>
-            <button data-view="games/minesweeper" class="nav-btn w-full text-left px-4 py-2 rounded-lg text-zinc-500 hover:text-zinc-300 transition-colors">Minesweeper</button>
-            <button data-view="games/memory-match" class="nav-btn w-full text-left px-4 py-2 rounded-lg text-zinc-500 hover:text-zinc-300 transition-colors">Memory Match</button>
-            <button data-view="games/2048" class="nav-btn w-full text-left px-4 py-2 rounded-lg text-zinc-500 hover:text-zinc-300 transition-colors">2048</button>
-            <button data-view="games/tic-tac-toe" class="nav-btn w-full text-left px-4 py-2 rounded-lg text-zinc-500 hover:text-zinc-300 transition-colors">Tic-Tac-Toe</button>
-            <button data-view="games/mini-tetris" class="nav-btn w-full text-left px-4 py-2 rounded-lg text-zinc-500 hover:text-zinc-300 transition-colors">Mini Tetris</button>
-            <button data-view="games/wordle" class="nav-btn w-full text-left px-4 py-2 rounded-lg text-zinc-500 hover:text-zinc-300 transition-colors">Wordle Clone</button>
-            <button data-view="games/flappy-bird" class="nav-btn w-full text-left px-4 py-2 rounded-lg text-zinc-500 hover:text-zinc-300 transition-colors">Flappy Bird</button>
-            <button data-view="games/rps" class="nav-btn w-full text-left px-4 py-2 rounded-lg text-zinc-500 hover:text-zinc-300 transition-colors">Rock Paper Scissors</button>
-            <button data-view="games/tower-blocks" class="nav-btn w-full text-left px-4 py-2 rounded-lg text-zinc-500 hover:text-zinc-300 transition-colors">Tower Blocks</button>
-            <button data-view="games/pong" class="nav-btn w-full text-left px-4 py-2 rounded-lg text-zinc-500 hover:text-zinc-300 transition-colors">Classic Pong</button>
-            <button data-view="games/simon" class="nav-btn w-full text-left px-4 py-2 rounded-lg text-zinc-500 hover:text-zinc-300 transition-colors">Simon Says</button>
-            <button data-view="games/speed-typing" class="nav-btn w-full text-left px-4 py-2 rounded-lg text-zinc-500 hover:text-zinc-300 transition-colors">Speed Typing</button>
-            <button data-view="games/piano" class="nav-btn w-full text-left px-4 py-2 rounded-lg text-zinc-500 hover:text-zinc-300 transition-colors">Piano Simulator</button>
+            <div class="pt-4 pb-2 text-xs font-semibold text-gray-500 uppercase tracking-wider">Games</div>
+            <button data-view="games/minesweeper" class="nav-btn w-full text-left px-4 py-2 rounded-lg text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Minesweeper</button>
+            <button data-view="games/memory-match" class="nav-btn w-full text-left px-4 py-2 rounded-lg text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Memory Match</button>
+            <button data-view="games/2048" class="nav-btn w-full text-left px-4 py-2 rounded-lg text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">2048</button>
+            <button data-view="games/tic-tac-toe" class="nav-btn w-full text-left px-4 py-2 rounded-lg text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Tic-Tac-Toe</button>
+            <button data-view="games/mini-tetris" class="nav-btn w-full text-left px-4 py-2 rounded-lg text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Mini Tetris</button>
+            <button data-view="games/wordle" class="nav-btn w-full text-left px-4 py-2 rounded-lg text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Wordle Clone</button>
+            <button data-view="games/flappy-bird" class="nav-btn w-full text-left px-4 py-2 rounded-lg text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Flappy Bird</button>
+            <button data-view="games/rps" class="nav-btn w-full text-left px-4 py-2 rounded-lg text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Rock Paper Scissors</button>
+            <button data-view="games/tower-blocks" class="nav-btn w-full text-left px-4 py-2 rounded-lg text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Tower Blocks</button>
+            <button data-view="games/pong" class="nav-btn w-full text-left px-4 py-2 rounded-lg text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Classic Pong</button>
+            <button data-view="games/simon" class="nav-btn w-full text-left px-4 py-2 rounded-lg text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Simon Says</button>
+            <button data-view="games/speed-typing" class="nav-btn w-full text-left px-4 py-2 rounded-lg text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Speed Typing</button>
+            <button data-view="games/piano" class="nav-btn w-full text-left px-4 py-2 rounded-lg text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Piano Simulator</button>
         </nav>
-        <footer class="p-4 border-t border-zinc-800 text-xs text-zinc-500 text-center">
+        <footer class="p-4 border-t border-gray-200 dark:border-gray-800 text-xs text-gray-500 text-center">
             &copy; 2026 PlayHub
         </footer>
     </aside>

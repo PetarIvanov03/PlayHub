@@ -79,11 +79,11 @@ document.addEventListener('DOMContentLoaded', () => {
         // Highlight active nav button
         navBtns.forEach(btn => {
             if (btn.dataset.view === view) {
-                btn.classList.add('bg-zinc-800', 'text-white');
-                btn.classList.remove('text-zinc-500');
+                btn.classList.add('bg-gray-100', 'dark:bg-gray-800', 'text-gray-900', 'dark:text-white');
+                btn.classList.remove('text-gray-500');
             } else {
-                btn.classList.remove('bg-zinc-800', 'text-white');
-                btn.classList.add('text-zinc-500');
+                btn.classList.remove('bg-gray-100', 'dark:bg-gray-800', 'text-gray-900', 'dark:text-white');
+                btn.classList.add('text-gray-500');
             }
         });
 
@@ -132,12 +132,12 @@ document.addEventListener('DOMContentLoaded', () => {
             const textClass = isTool ? 'text-indigo-600 dark:text-indigo-400' : 'text-rose-600 dark:text-rose-400';
 
             return `
-                <div class="cursor-pointer group flex flex-col bg-zinc-900/50 border border-zinc-800/80 backdrop-blur-md rounded-2xl p-6 shadow-xl active:scale-95 transition-all overflow-hidden" onclick="document.querySelector('[data-view=\\'${view}\\']').click()">
+                <div class="cursor-pointer group flex flex-col bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 overflow-hidden hover:shadow-md transition-shadow" onclick="document.querySelector('[data-view=\\'${view}\\']').click()">
                     <div class="h-32 flex items-center justify-center ${bgClass} ${textClass} text-5xl transition-transform group-hover:scale-105">
                         ${icon}
                     </div>
                     <div class="p-4 flex-grow flex items-center justify-center text-center">
-                        <span class="font-bold tracking-tight text-sm text-white">${title}</span>
+                        <span class="font-medium text-sm text-gray-900 dark:text-gray-100">${title}</span>
                     </div>
                 </div>
             `;

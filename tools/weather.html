@@ -7,7 +7,7 @@
             type="text"
             id="weather-search-input"
             placeholder="[ Search city... ]"
-            class="w-full bg-transparent border-b border-zinc-800 focus:border-zinc-500 focus:ring-0 transition-all rounded-none px-6 py-4 pr-14 text-center text-lg text-zinc-100 placeholder-zinc-500 outline-none"
+            class="w-full bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 border border-gray-200 dark:border-gray-700 rounded-full px-6 py-4 pr-14 shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-shadow text-center text-lg placeholder-gray-400 dark:placeholder-gray-500"
             autocomplete="off"
         >
         <button
@@ -27,23 +27,23 @@
     </div>
 
     <!-- Weather Display Card (Hidden by Default) -->
-    <div id="weather-card" class="w-full bg-zinc-900/50 border border-zinc-800/80 backdrop-blur-md rounded-2xl p-6 shadow-xl overflow-hidden flex-col items-center hidden">
-        <h2 id="weather-city" class="text-2xl font-medium text-white mb-1">--</h2>
-        <p id="weather-country" class="text-zinc-400 text-sm mb-6 uppercase tracking-wider">--</p>
+    <div id="weather-card" class="w-full bg-white dark:bg-gray-800 rounded-3xl shadow-sm border border-gray-100 dark:border-gray-700 overflow-hidden flex-col items-center p-8 hidden">
+        <h2 id="weather-city" class="text-2xl font-medium text-gray-900 dark:text-white mb-1">--</h2>
+        <p id="weather-country" class="text-gray-500 dark:text-gray-400 text-sm mb-6 uppercase tracking-wider">--</p>
 
         <div class="flex flex-col items-center justify-center mb-6">
-            <span id="weather-temp" class="text-6xl font-extrabold tracking-tighter text-white">--°C</span>
-            <span id="weather-condition" class="text-lg text-indigo-400 mt-2 font-medium">--</span>
+            <span id="weather-temp" class="text-7xl font-light text-gray-900 dark:text-white tracking-tighter">--°C</span>
+            <span id="weather-condition" class="text-lg text-indigo-600 dark:text-indigo-400 mt-2 font-medium">--</span>
         </div>
 
-        <div class="w-full grid grid-cols-2 gap-4 mt-4 border-t border-zinc-800/80 pt-6">
+        <div class="w-full grid grid-cols-2 gap-4 mt-4 border-t border-gray-100 dark:border-gray-700 pt-6">
             <div class="flex flex-col items-center">
-                <span class="text-xs text-zinc-500 uppercase tracking-wider mb-1">Humidity</span>
-                <span id="weather-humidity" class="text-lg font-medium text-zinc-300">--%</span>
+                <span class="text-xs text-gray-400 dark:text-gray-500 uppercase tracking-wider mb-1">Humidity</span>
+                <span id="weather-humidity" class="text-lg font-medium text-gray-700 dark:text-gray-300">--%</span>
             </div>
             <div class="flex flex-col items-center">
-                <span class="text-xs text-zinc-500 uppercase tracking-wider mb-1">Wind Speed</span>
-                <span id="weather-wind" class="text-lg font-medium text-zinc-300">-- km/h</span>
+                <span class="text-xs text-gray-400 dark:text-gray-500 uppercase tracking-wider mb-1">Wind Speed</span>
+                <span id="weather-wind" class="text-lg font-medium text-gray-700 dark:text-gray-300">-- km/h</span>
             </div>
         </div>
     </div>
