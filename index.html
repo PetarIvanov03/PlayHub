@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlayHub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Base styles for a clean minimalist look */
+        body {
+            font-family: 'Inter', sans-serif;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .hide {
+            display: none !important;
+        }
+        /* Custom scrollbar, minimalist */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background-color: #4b5563; border-radius: 4px; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100 min-h-screen flex flex-col antialiased">
+
+    <!-- Header -->
+    <header class="border-b border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950 px-6 py-4 flex justify-between items-center sticky top-0 z-10">
+        <div class="text-2xl font-bold tracking-tight">PlayHub</div>
+        <nav class="flex space-x-6">
+            <button data-target="tools" class="nav-btn text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white font-medium transition-colors">Tools</button>
+            <button data-target="games" class="nav-btn text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white font-medium transition-colors">Games</button>
+            <button id="theme-toggle" class="ml-4 p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" aria-label="Toggle Theme">
+                <svg id="theme-icon-dark" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+                <svg id="theme-icon-light" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"></path></svg>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="flex-grow flex flex-col p-6 max-w-5xl mx-auto w-full">
+
+        <!-- Category: Tools -->
+        <section id="tools" class="category-section hidden flex-col h-full w-full">
+            <h2 class="text-3xl font-light mb-6">Tools</h2>
+
+            <!-- Sub-navigation -->
+            <div class="flex space-x-4 border-b border-gray-200 dark:border-gray-800 mb-8">
+                <button data-subtarget="calc-standard" class="subnav-btn pb-2 border-b-2 border-transparent hover:border-gray-400 dark:hover:border-gray-500 font-medium transition-all">Standard Calculator</button>
+                <button data-subtarget="calc-trig" class="subnav-btn pb-2 border-b-2 border-transparent hover:border-gray-400 dark:hover:border-gray-500 font-medium transition-all">Trigonometry</button>
+            </div>
+
+            <!-- Standard Calculator -->
+            <div id="calc-standard" class="sub-section hidden max-w-sm mx-auto w-full">
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700">
+                    <div class="mb-4 bg-gray-50 dark:bg-gray-900 rounded-xl p-4 text-right overflow-hidden">
+                        <div id="calc-expression" class="text-sm text-gray-500 dark:text-gray-400 h-5 mb-1 truncate"></div>
+                        <div id="calc-display" class="text-4xl font-light tracking-tight truncate">0</div>
+                    </div>
+                    <div class="grid grid-cols-4 gap-3">
+                        <button class="calc-btn col-span-2 bg-red-50 text-red-600 dark:bg-red-900/20 dark:text-red-400 hover:bg-red-100 dark:hover:bg-red-900/40 rounded-xl py-3 font-medium transition-colors" data-action="clear">C</button>
+                        <button class="calc-btn bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 rounded-xl py-3 font-medium transition-colors" data-action="delete">DEL</button>
+                        <button class="calc-btn bg-blue-50 text-blue-600 dark:bg-blue-900/20 dark:text-blue-400 hover:bg-blue-100 dark:hover:bg-blue-900/40 rounded-xl py-3 font-medium transition-colors" data-action="operator" data-val="/">/</button>
+
+                        <button class="calc-btn bg-gray-50 dark:bg-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-xl py-3 font-medium transition-colors" data-action="number" data-val="7">7</button>
+                        <button class="calc-btn bg-gray-50 dark:bg-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-xl py-3 font-medium transition-colors" data-action="number" data-val="8">8</button>
+                        <button class="calc-btn bg-gray-50 dark:bg-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-xl py-3 font-medium transition-colors" data-action="number" data-val="9">9</button>
+                        <button class="calc-btn bg-blue-50 text-blue-600 dark:bg-blue-900/20 dark:text-blue-400 hover:bg-blue-100 dark:hover:bg-blue-900/40 rounded-xl py-3 font-medium transition-colors" data-action="operator" data-val="*">×</button>
+
+                        <button class="calc-btn bg-gray-50 dark:bg-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-xl py-3 font-medium transition-colors" data-action="number" data-val="4">4</button>
+                        <button class="calc-btn bg-gray-50 dark:bg-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-xl py-3 font-medium transition-colors" data-action="number" data-val="5">5</button>
+                        <button class="calc-btn bg-gray-50 dark:bg-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-xl py-3 font-medium transition-colors" data-action="number" data-val="6">6</button>
+                        <button class="calc-btn bg-blue-50 text-blue-600 dark:bg-blue-900/20 dark:text-blue-400 hover:bg-blue-100 dark:hover:bg-blue-900/40 rounded-xl py-3 font-medium transition-colors" data-action="operator" data-val="-">−</button>
+
+                        <button class="calc-btn bg-gray-50 dark:bg-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-xl py-3 font-medium transition-colors" data-action="number" data-val="1">1</button>
+                        <button class="calc-btn bg-gray-50 dark:bg-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-xl py-3 font-medium transition-colors" data-action="number" data-val="2">2</button>
+                        <button class="calc-btn bg-gray-50 dark:bg-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-xl py-3 font-medium transition-colors" data-action="number" data-val="3">3</button>
+                        <button class="calc-btn bg-blue-50 text-blue-600 dark:bg-blue-900/20 dark:text-blue-400 hover:bg-blue-100 dark:hover:bg-blue-900/40 rounded-xl py-3 font-medium transition-colors" data-action="operator" data-val="+">+</button>
+
+                        <button class="calc-btn col-span-2 bg-gray-50 dark:bg-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-xl py-3 font-medium transition-colors" data-action="number" data-val="0">0</button>
+                        <button class="calc-btn bg-gray-50 dark:bg-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-xl py-3 font-medium transition-colors" data-action="number" data-val=".">.</button>
+                        <button class="calc-btn bg-indigo-600 text-white hover:bg-indigo-700 dark:bg-indigo-600 dark:hover:bg-indigo-500 rounded-xl py-3 font-medium transition-colors shadow-sm" data-action="equals">=</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Trigonometry Calculator -->
+            <div id="calc-trig" class="sub-section hidden max-w-lg mx-auto w-full">
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700">
+
+                    <div class="mb-6 flex bg-gray-100 dark:bg-gray-900 rounded-lg p-1">
+                        <button id="unit-deg" class="flex-1 py-2 text-sm font-medium rounded-md bg-white dark:bg-gray-800 shadow-sm transition-all">Degrees</button>
+                        <button id="unit-rad" class="flex-1 py-2 text-sm font-medium rounded-md text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-all">Radians</button>
+                    </div>
+
+                    <div class="mb-6">
+                        <label for="trig-input" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Input Value</label>
+                        <input type="number" id="trig-input" class="w-full bg-gray-50 dark:bg-gray-900 border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white text-lg rounded-xl focus:ring-indigo-500 focus:border-indigo-500 block p-3" placeholder="0" step="any">
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="p-4 bg-gray-50 dark:bg-gray-900 rounded-xl">
+                            <div class="text-sm text-gray-500 dark:text-gray-400 mb-1">Sin</div>
+                            <div id="trig-sin" class="text-xl font-medium tracking-tight">0.0000</div>
+                        </div>
+                        <div class="p-4 bg-gray-50 dark:bg-gray-900 rounded-xl">
+                            <div class="text-sm text-gray-500 dark:text-gray-400 mb-1">Cos</div>
+                            <div id="trig-cos" class="text-xl font-medium tracking-tight">1.0000</div>
+                        </div>
+                        <div class="p-4 bg-gray-50 dark:bg-gray-900 rounded-xl">
+                            <div class="text-sm text-gray-500 dark:text-gray-400 mb-1">Tan</div>
+                            <div id="trig-tan" class="text-xl font-medium tracking-tight">0.0000</div>
+                        </div>
+                        <div class="p-4 bg-gray-50 dark:bg-gray-900 rounded-xl">
+                            <div class="text-sm text-gray-500 dark:text-gray-400 mb-1" id="trig-conv-label">To Radians</div>
+                            <div id="trig-conv" class="text-xl font-medium tracking-tight">0.0000</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Category: Games -->
+        <section id="games" class="category-section hidden flex-col h-full w-full">
+            <h2 class="text-3xl font-light mb-6">Games</h2>
+
+            <!-- Sub-navigation -->
+            <div class="flex space-x-4 border-b border-gray-200 dark:border-gray-800 mb-8">
+                <button data-subtarget="game-minesweeper" class="subnav-btn pb-2 border-b-2 border-transparent hover:border-gray-400 dark:hover:border-gray-500 font-medium transition-all">Minesweeper</button>
+                <button data-subtarget="game-memory" class="subnav-btn pb-2 border-b-2 border-transparent hover:border-gray-400 dark:hover:border-gray-500 font-medium transition-all">Memory Match</button>
+            </div>
+
+            <!-- Minesweeper -->
+            <div id="game-minesweeper" class="sub-section hidden mx-auto w-full max-w-md">
+                <div class="bg-gray-200 dark:bg-gray-800 p-4 rounded-xl shadow-inner border border-gray-300 dark:border-gray-700">
+                    <!-- Top Bar -->
+                    <div class="flex justify-between items-center bg-gray-300 dark:bg-gray-900 p-3 rounded-lg mb-4 border-4 border-t-gray-400 border-l-gray-400 border-b-white border-r-white dark:border-t-gray-700 dark:border-l-gray-700 dark:border-b-gray-600 dark:border-r-gray-600">
+                        <div id="mines-counter" class="text-red-600 bg-black px-2 py-1 font-mono text-2xl tracking-widest rounded leading-none w-16 text-right">010</div>
+                        <button id="ms-reset-btn" class="text-2xl bg-gray-200 dark:bg-gray-700 w-10 h-10 flex items-center justify-center border-2 border-t-white border-l-white border-b-gray-400 border-r-gray-400 dark:border-t-gray-500 dark:border-l-gray-500 dark:border-b-gray-900 dark:border-r-gray-900 active:border-t-gray-400 active:border-l-gray-400 active:border-b-white active:border-r-white">🙂</button>
+                        <div id="ms-timer" class="text-red-600 bg-black px-2 py-1 font-mono text-2xl tracking-widest rounded leading-none w-16 text-right">000</div>
+                    </div>
+                    <!-- Grid -->
+                    <div id="ms-grid" class="grid grid-cols-9 bg-gray-400 dark:bg-gray-600 border-4 border-t-gray-400 border-l-gray-400 border-b-white border-r-white dark:border-t-gray-700 dark:border-l-gray-700 dark:border-b-gray-500 dark:border-r-gray-500 w-fit mx-auto touch-none">
+                        <!-- Cells generated by JS -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Memory Match -->
+            <div id="game-memory" class="sub-section hidden mx-auto w-full max-w-md">
+                <div class="flex justify-between items-center mb-4">
+                    <div class="text-lg font-medium">Moves: <span id="memory-moves">0</span></div>
+                    <button id="memory-reset" class="px-4 py-2 bg-indigo-600 text-white hover:bg-indigo-700 rounded-lg text-sm font-medium transition-colors">Restart</button>
+                </div>
+                <div id="memory-grid" class="grid grid-cols-4 gap-3">
+                    <!-- Cards generated by JS -->
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-200 dark:border-gray-800 mt-auto py-6 text-center text-sm text-gray-500 dark:text-gray-400">
+        &copy; <span id="year"></span> PlayHub. Ultra-minimalist SPA.
+        <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+    </footer>
+
+    <!-- Modals -->
+    <!-- Minesweeper Win/Loss Modal -->
+    <div id="ms-modal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden flex items-center justify-center">
+        <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 max-w-sm w-full mx-4 shadow-xl text-center transform scale-95 opacity-0 transition-all duration-300" id="ms-modal-content">
+            <h3 id="ms-modal-title" class="text-2xl font-bold mb-2">Game Over</h3>
+            <p id="ms-modal-msg" class="text-gray-600 dark:text-gray-400 mb-6">You hit a mine!</p>
+            <button id="ms-modal-close" class="w-full py-3 bg-indigo-600 text-white rounded-xl font-medium hover:bg-indigo-700 transition-colors">Play Again</button>
+        </div>
+    </div>
+
+    <!-- Memory Match Win Modal -->
+    <div id="memory-modal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden flex items-center justify-center">
+        <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 max-w-sm w-full mx-4 shadow-xl text-center transform scale-95 opacity-0 transition-all duration-300" id="memory-modal-content">
+            <h3 class="text-2xl font-bold mb-2">You Won!</h3>
+            <p id="memory-modal-msg" class="text-gray-600 dark:text-gray-400 mb-6">Completed in 12 moves.</p>
+            <button id="memory-modal-close" class="w-full py-3 bg-indigo-600 text-white rounded-xl font-medium hover:bg-indigo-700 transition-colors">Play Again</button>
+        </div>
+    </div>
+
+    <!-- Application Logic -->
+    <script src="app.js"></script>
+
+    <style>
+        /* Card Flip Styles */
+        .memory-card {
+            perspective: 1000px;
+            aspect-ratio: 1 / 1;
+            cursor: pointer;
+        }
+        .memory-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s cubic-bezier(0.4, 0.0, 0.2, 1);
+            transform-style: preserve-3d;
+        }
+        .memory-card.flipped .memory-card-inner {
+            transform: rotateY(180deg);
+        }
+        .memory-card-front, .memory-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0.75rem;
+        }
+        .memory-card-front {
+            background-color: #f3f4f6;
+            color: transparent;
+        }
+        .dark .memory-card-front {
+            background-color: #374151;
+        }
+        .memory-card-back {
+            background-color: #fff;
+            transform: rotateY(180deg);
+            font-size: 2rem;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+            border: 1px solid #e5e7eb;
+        }
+        .dark .memory-card-back {
+            background-color: #1f2937;
+            border-color: #374151;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.5);
+        }
+
+        /* Minesweeper Cell Styles */
+        .ms-cell {
+            width: 2rem;
+            height: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.125rem;
+            user-select: none;
+            cursor: pointer;
+        }
+        .ms-cell-hidden {
+            background-color: #d1d5db;
+            border: 2px solid;
+            border-top-color: #f3f4f6;
+            border-left-color: #f3f4f6;
+            border-bottom-color: #9ca3af;
+            border-right-color: #9ca3af;
+        }
+        .dark .ms-cell-hidden {
+            background-color: #4b5563;
+            border-top-color: #6b7280;
+            border-left-color: #6b7280;
+            border-bottom-color: #374151;
+            border-right-color: #374151;
+        }
+        .ms-cell-hidden:active {
+            border-top-color: #9ca3af;
+            border-left-color: #9ca3af;
+            border-bottom-color: #f3f4f6;
+            border-right-color: #f3f4f6;
+        }
+        .dark .ms-cell-hidden:active {
+            border-top-color: #374151;
+            border-left-color: #374151;
+            border-bottom-color: #6b7280;
+            border-right-color: #6b7280;
+        }
+        .ms-cell-revealed {
+            background-color: #e5e7eb;
+            border: 1px solid #9ca3af;
+        }
+        .dark .ms-cell-revealed {
+            background-color: #374151;
+            border: 1px solid #1f2937;
+        }
+    </style>
+</body>
+</html>
