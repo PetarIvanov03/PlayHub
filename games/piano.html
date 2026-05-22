@@ -1,0 +1,58 @@
+<div class="max-w-4xl mx-auto w-full mt-10 flex flex-col items-center">
+    <h2 class="text-3xl font-light mb-8 text-gray-900 dark:text-white">Piano Simulator</h2>
+
+    <div class="mb-12 flex items-center space-x-3 bg-white dark:bg-gray-800 px-6 py-3 rounded-full shadow-sm border border-gray-100 dark:border-gray-700">
+        <span class="text-sm font-medium text-gray-600 dark:text-gray-300">Sustain Pedal</span>
+        <button id="piano-sustain" class="relative inline-flex h-6 w-11 items-center rounded-full bg-gray-200 dark:bg-gray-600 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800">
+            <span class="inline-block h-4 w-4 transform rounded-full bg-white transition-transform translate-x-1" id="piano-sustain-knob"></span>
+        </button>
+    </div>
+
+    <!-- 1.5 Octaves: C4 to G5 -->
+    <!-- White Keys: C4, D4, E4, F4, G4, A4, B4, C5, D5, E5, F5, G5 (12 keys) -->
+    <!-- Black Keys: C#4, D#4, F#4, G#4, A#4, C#5, D#5, F#5 (8 keys) -->
+
+    <div class="relative flex" id="piano-keyboard">
+        <!-- White Keys -->
+        <div class="flex">
+            <div class="piano-key white-key w-12 h-48 bg-white border border-gray-300 dark:border-gray-600 rounded-b-md shadow flex items-end justify-center pb-2 cursor-pointer transition-colors" data-note="C4" data-key="a"><span class="text-xs font-bold text-gray-400 opacity-50 pointer-events-none">A</span></div>
+            <div class="piano-key white-key w-12 h-48 bg-white border border-gray-300 dark:border-gray-600 border-l-0 rounded-b-md shadow flex items-end justify-center pb-2 cursor-pointer transition-colors" data-note="D4" data-key="s"><span class="text-xs font-bold text-gray-400 opacity-50 pointer-events-none">S</span></div>
+            <div class="piano-key white-key w-12 h-48 bg-white border border-gray-300 dark:border-gray-600 border-l-0 rounded-b-md shadow flex items-end justify-center pb-2 cursor-pointer transition-colors" data-note="E4" data-key="d"><span class="text-xs font-bold text-gray-400 opacity-50 pointer-events-none">D</span></div>
+            <div class="piano-key white-key w-12 h-48 bg-white border border-gray-300 dark:border-gray-600 border-l-0 rounded-b-md shadow flex items-end justify-center pb-2 cursor-pointer transition-colors" data-note="F4" data-key="f"><span class="text-xs font-bold text-gray-400 opacity-50 pointer-events-none">F</span></div>
+            <div class="piano-key white-key w-12 h-48 bg-white border border-gray-300 dark:border-gray-600 border-l-0 rounded-b-md shadow flex items-end justify-center pb-2 cursor-pointer transition-colors" data-note="G4" data-key="g"><span class="text-xs font-bold text-gray-400 opacity-50 pointer-events-none">G</span></div>
+            <div class="piano-key white-key w-12 h-48 bg-white border border-gray-300 dark:border-gray-600 border-l-0 rounded-b-md shadow flex items-end justify-center pb-2 cursor-pointer transition-colors" data-note="A4" data-key="h"><span class="text-xs font-bold text-gray-400 opacity-50 pointer-events-none">H</span></div>
+            <div class="piano-key white-key w-12 h-48 bg-white border border-gray-300 dark:border-gray-600 border-l-0 rounded-b-md shadow flex items-end justify-center pb-2 cursor-pointer transition-colors" data-note="B4" data-key="j"><span class="text-xs font-bold text-gray-400 opacity-50 pointer-events-none">J</span></div>
+            <div class="piano-key white-key w-12 h-48 bg-white border border-gray-300 dark:border-gray-600 border-l-0 rounded-b-md shadow flex items-end justify-center pb-2 cursor-pointer transition-colors" data-note="C5" data-key="k"><span class="text-xs font-bold text-gray-400 opacity-50 pointer-events-none">K</span></div>
+            <div class="piano-key white-key w-12 h-48 bg-white border border-gray-300 dark:border-gray-600 border-l-0 rounded-b-md shadow flex items-end justify-center pb-2 cursor-pointer transition-colors" data-note="D5" data-key="l"><span class="text-xs font-bold text-gray-400 opacity-50 pointer-events-none">L</span></div>
+            <div class="piano-key white-key w-12 h-48 bg-white border border-gray-300 dark:border-gray-600 border-l-0 rounded-b-md shadow flex items-end justify-center pb-2 cursor-pointer transition-colors" data-note="E5" data-key=";"><span class="text-xs font-bold text-gray-400 opacity-50 pointer-events-none">;</span></div>
+            <div class="piano-key white-key w-12 h-48 bg-white border border-gray-300 dark:border-gray-600 border-l-0 rounded-b-md shadow flex items-end justify-center pb-2 cursor-pointer transition-colors" data-note="F5" data-key="'"><span class="text-xs font-bold text-gray-400 opacity-50 pointer-events-none">'</span></div>
+            <div class="piano-key white-key w-12 h-48 bg-white border border-gray-300 dark:border-gray-600 border-l-0 rounded-b-md shadow flex items-end justify-center pb-2 cursor-pointer transition-colors" data-note="G5" data-key="Enter"><span class="text-xs font-bold text-gray-400 opacity-50 pointer-events-none text-[8px]">ENT</span></div>
+        </div>
+
+        <!-- Black Keys (Absolutely Positioned) -->
+        <div class="piano-key black-key absolute w-8 h-28 bg-gray-900 border border-gray-950 rounded-b-sm shadow-md flex items-end justify-center pb-2 cursor-pointer transition-colors" style="left: calc(3rem - 1rem);" data-note="C#4" data-key="w"><span class="text-xs font-bold text-gray-400 opacity-50 pointer-events-none">W</span></div>
+        <div class="piano-key black-key absolute w-8 h-28 bg-gray-900 border border-gray-950 rounded-b-sm shadow-md flex items-end justify-center pb-2 cursor-pointer transition-colors" style="left: calc(6rem - 1rem);" data-note="D#4" data-key="e"><span class="text-xs font-bold text-gray-400 opacity-50 pointer-events-none">E</span></div>
+
+        <!-- Gap over E-F -->
+
+        <div class="piano-key black-key absolute w-8 h-28 bg-gray-900 border border-gray-950 rounded-b-sm shadow-md flex items-end justify-center pb-2 cursor-pointer transition-colors" style="left: calc(12rem - 1rem);" data-note="F#4" data-key="t"><span class="text-xs font-bold text-gray-400 opacity-50 pointer-events-none">T</span></div>
+        <div class="piano-key black-key absolute w-8 h-28 bg-gray-900 border border-gray-950 rounded-b-sm shadow-md flex items-end justify-center pb-2 cursor-pointer transition-colors" style="left: calc(15rem - 1rem);" data-note="G#4" data-key="y"><span class="text-xs font-bold text-gray-400 opacity-50 pointer-events-none">Y</span></div>
+        <div class="piano-key black-key absolute w-8 h-28 bg-gray-900 border border-gray-950 rounded-b-sm shadow-md flex items-end justify-center pb-2 cursor-pointer transition-colors" style="left: calc(18rem - 1rem);" data-note="A#4" data-key="u"><span class="text-xs font-bold text-gray-400 opacity-50 pointer-events-none">U</span></div>
+
+        <!-- Gap over B-C -->
+
+        <div class="piano-key black-key absolute w-8 h-28 bg-gray-900 border border-gray-950 rounded-b-sm shadow-md flex items-end justify-center pb-2 cursor-pointer transition-colors" style="left: calc(24rem - 1rem);" data-note="C#5" data-key="o"><span class="text-xs font-bold text-gray-400 opacity-50 pointer-events-none">O</span></div>
+        <div class="piano-key black-key absolute w-8 h-28 bg-gray-900 border border-gray-950 rounded-b-sm shadow-md flex items-end justify-center pb-2 cursor-pointer transition-colors" style="left: calc(27rem - 1rem);" data-note="D#5" data-key="p"><span class="text-xs font-bold text-gray-400 opacity-50 pointer-events-none">P</span></div>
+
+        <!-- Gap over E-F -->
+
+        <div class="piano-key black-key absolute w-8 h-28 bg-gray-900 border border-gray-950 rounded-b-sm shadow-md flex items-end justify-center pb-2 cursor-pointer transition-colors" style="left: calc(33rem - 1rem);" data-note="F#5" data-key="]"><span class="text-xs font-bold text-gray-400 opacity-50 pointer-events-none">]</span></div>
+    </div>
+</div>
+
+<style>
+    .white-key.active { background-color: #e5e7eb; }
+    .dark .white-key.active { background-color: #d1d5db; }
+
+    .black-key.active { background-color: #374151; }
+</style>
