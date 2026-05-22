@@ -1,0 +1,28 @@
+<div class="max-w-md mx-auto w-full mt-10">
+    <div class="flex justify-between items-center mb-6">
+        <div>
+            <div class="text-3xl font-bold text-gray-900 dark:text-white">2048</div>
+            <div class="text-sm text-gray-500">Join the numbers!</div>
+        </div>
+        <div class="flex space-x-2 text-center">
+            <div class="bg-gray-200 dark:bg-gray-800 rounded-lg px-4 py-2">
+                <div class="text-xs uppercase font-bold text-gray-500">Score</div>
+                <div id="g2-score" class="font-bold text-lg">0</div>
+            </div>
+            <button id="g2-reset" class="bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg px-4 py-2 font-medium">New</button>
+        </div>
+    </div>
+
+    <div class="bg-gray-300 dark:bg-gray-700 p-3 rounded-xl aspect-square relative" id="g2-container">
+        <!-- 4x4 Grid Background -->
+        <div class="grid grid-cols-4 grid-rows-4 gap-3 w-full h-full absolute inset-0 p-3">
+            <div class="bg-gray-200 dark:bg-gray-600 rounded-lg w-full h-full"></div><div class="bg-gray-200 dark:bg-gray-600 rounded-lg w-full h-full"></div><div class="bg-gray-200 dark:bg-gray-600 rounded-lg w-full h-full"></div><div class="bg-gray-200 dark:bg-gray-600 rounded-lg w-full h-full"></div>
+            <div class="bg-gray-200 dark:bg-gray-600 rounded-lg w-full h-full"></div><div class="bg-gray-200 dark:bg-gray-600 rounded-lg w-full h-full"></div><div class="bg-gray-200 dark:bg-gray-600 rounded-lg w-full h-full"></div><div class="bg-gray-200 dark:bg-gray-600 rounded-lg w-full h-full"></div>
+            <div class="bg-gray-200 dark:bg-gray-600 rounded-lg w-full h-full"></div><div class="bg-gray-200 dark:bg-gray-600 rounded-lg w-full h-full"></div><div class="bg-gray-200 dark:bg-gray-600 rounded-lg w-full h-full"></div><div class="bg-gray-200 dark:bg-gray-600 rounded-lg w-full h-full"></div>
+            <div class="bg-gray-200 dark:bg-gray-600 rounded-lg w-full h-full"></div><div class="bg-gray-200 dark:bg-gray-600 rounded-lg w-full h-full"></div><div class="bg-gray-200 dark:bg-gray-600 rounded-lg w-full h-full"></div><div class="bg-gray-200 dark:bg-gray-600 rounded-lg w-full h-full"></div>
+        </div>
+        <!-- Active Tiles injected here -->
+        <div id="g2-tiles" class="absolute inset-0 p-3 pointer-events-none"></div>
+    </div>
+    <div id="g2-msg" class="text-center mt-4 text-xl font-bold text-red-500 hidden">Game Over!</div>
+</div>

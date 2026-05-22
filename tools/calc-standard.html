@@ -1,0 +1,32 @@
+<div class="max-w-sm mx-auto w-full mt-10">
+    <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700">
+        <div class="mb-4 bg-gray-50 dark:bg-gray-900 rounded-xl p-4 text-right overflow-hidden">
+            <div id="calc-expression" class="text-sm text-gray-500 dark:text-gray-400 h-5 mb-1 truncate"></div>
+            <div id="calc-display" class="text-4xl font-light tracking-tight truncate">0</div>
+        </div>
+        <div class="grid grid-cols-4 gap-3">
+            <button class="calc-btn col-span-2 bg-red-50 text-red-600 dark:bg-red-900/20 dark:text-red-400 hover:bg-red-100 dark:hover:bg-red-900/40 rounded-xl py-3 font-medium transition-colors" data-action="clear">C</button>
+            <button class="calc-btn bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 rounded-xl py-3 font-medium transition-colors" data-action="delete">DEL</button>
+            <button class="calc-btn bg-blue-50 text-blue-600 dark:bg-blue-900/20 dark:text-blue-400 hover:bg-blue-100 dark:hover:bg-blue-900/40 rounded-xl py-3 font-medium transition-colors" data-action="operator" data-val="/">/</button>
+
+            <button class="calc-btn bg-gray-50 dark:bg-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-xl py-3 font-medium transition-colors" data-action="number" data-val="7">7</button>
+            <button class="calc-btn bg-gray-50 dark:bg-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-xl py-3 font-medium transition-colors" data-action="number" data-val="8">8</button>
+            <button class="calc-btn bg-gray-50 dark:bg-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-xl py-3 font-medium transition-colors" data-action="number" data-val="9">9</button>
+            <button class="calc-btn bg-blue-50 text-blue-600 dark:bg-blue-900/20 dark:text-blue-400 hover:bg-blue-100 dark:hover:bg-blue-900/40 rounded-xl py-3 font-medium transition-colors" data-action="operator" data-val="*">×</button>
+
+            <button class="calc-btn bg-gray-50 dark:bg-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-xl py-3 font-medium transition-colors" data-action="number" data-val="4">4</button>
+            <button class="calc-btn bg-gray-50 dark:bg-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-xl py-3 font-medium transition-colors" data-action="number" data-val="5">5</button>
+            <button class="calc-btn bg-gray-50 dark:bg-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-xl py-3 font-medium transition-colors" data-action="number" data-val="6">6</button>
+            <button class="calc-btn bg-blue-50 text-blue-600 dark:bg-blue-900/20 dark:text-blue-400 hover:bg-blue-100 dark:hover:bg-blue-900/40 rounded-xl py-3 font-medium transition-colors" data-action="operator" data-val="-">−</button>
+
+            <button class="calc-btn bg-gray-50 dark:bg-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-xl py-3 font-medium transition-colors" data-action="number" data-val="1">1</button>
+            <button class="calc-btn bg-gray-50 dark:bg-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-xl py-3 font-medium transition-colors" data-action="number" data-val="2">2</button>
+            <button class="calc-btn bg-gray-50 dark:bg-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-xl py-3 font-medium transition-colors" data-action="number" data-val="3">3</button>
+            <button class="calc-btn bg-blue-50 text-blue-600 dark:bg-blue-900/20 dark:text-blue-400 hover:bg-blue-100 dark:hover:bg-blue-900/40 rounded-xl py-3 font-medium transition-colors" data-action="operator" data-val="+">+</button>
+
+            <button class="calc-btn col-span-2 bg-gray-50 dark:bg-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-xl py-3 font-medium transition-colors" data-action="number" data-val="0">0</button>
+            <button class="calc-btn bg-gray-50 dark:bg-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-xl py-3 font-medium transition-colors" data-action="number" data-val=".">.</button>
+            <button class="calc-btn bg-indigo-600 text-white hover:bg-indigo-700 dark:bg-indigo-600 dark:hover:bg-indigo-500 rounded-xl py-3 font-medium transition-colors shadow-sm" data-action="equals">=</button>
+        </div>
+    </div>
+</div>

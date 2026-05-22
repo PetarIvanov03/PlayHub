@@ -1,0 +1,24 @@
+<div class="max-w-4xl mx-auto w-full mt-10 space-y-6 h-[calc(100vh-8rem)] flex flex-col">
+    <h2 class="text-2xl font-light">Word & Character Counter</h2>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="bg-white dark:bg-gray-800 p-4 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 text-center">
+            <div class="text-xs font-medium text-gray-500 uppercase tracking-wider mb-1">Words</div>
+            <div id="wc-words" class="text-3xl font-light text-indigo-600 dark:text-indigo-400">0</div>
+        </div>
+        <div class="bg-white dark:bg-gray-800 p-4 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 text-center">
+            <div class="text-xs font-medium text-gray-500 uppercase tracking-wider mb-1">Characters</div>
+            <div id="wc-chars" class="text-3xl font-light text-indigo-600 dark:text-indigo-400">0</div>
+        </div>
+        <div class="bg-white dark:bg-gray-800 p-4 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 text-center">
+            <div class="text-xs font-medium text-gray-500 uppercase tracking-wider mb-1">Sentences</div>
+            <div id="wc-sent" class="text-3xl font-light text-indigo-600 dark:text-indigo-400">0</div>
+        </div>
+        <div class="bg-white dark:bg-gray-800 p-4 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 text-center">
+            <div class="text-xs font-medium text-gray-500 uppercase tracking-wider mb-1">Read Time</div>
+            <div id="wc-time" class="text-3xl font-light text-indigo-600 dark:text-indigo-400">0m</div>
+        </div>
+    </div>
+
+    <textarea id="wc-text" class="flex-grow w-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl p-6 resize-none shadow-sm text-lg" placeholder="Start typing or paste your text here..."></textarea>
+</div>

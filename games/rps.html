@@ -1,0 +1,32 @@
+<div class="max-w-md mx-auto w-full mt-10 text-center space-y-8">
+    <h2 class="text-3xl font-bold">Rock Paper Scissors</h2>
+
+    <div class="grid grid-cols-3 gap-4 bg-white dark:bg-gray-800 p-4 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700">
+        <div>
+            <div class="text-xs text-gray-500 uppercase font-bold">You</div>
+            <div id="rps-you" class="text-3xl font-bold text-indigo-600 dark:text-indigo-400">0</div>
+        </div>
+        <div>
+            <div class="text-xs text-gray-500 uppercase font-bold">Draws</div>
+            <div id="rps-draws" class="text-3xl font-bold text-gray-400">0</div>
+        </div>
+        <div>
+            <div class="text-xs text-gray-500 uppercase font-bold">CPU</div>
+            <div id="rps-cpu" class="text-3xl font-bold text-rose-600 dark:text-rose-400">0</div>
+        </div>
+    </div>
+
+    <div class="h-16 flex items-center justify-center space-x-8 text-6xl">
+        <div id="rps-p1" class="transition-transform">❓</div>
+        <div class="text-2xl text-gray-400 font-bold">VS</div>
+        <div id="rps-p2" class="transition-transform">❓</div>
+    </div>
+
+    <div id="rps-msg" class="h-6 font-bold text-xl text-gray-700 dark:text-gray-300">Choose your weapon</div>
+
+    <div class="flex justify-center space-x-4">
+        <button class="rps-btn text-6xl hover:scale-110 transition-transform active:scale-95 bg-gray-100 dark:bg-gray-800 p-4 rounded-2xl" data-c="rock">✊</button>
+        <button class="rps-btn text-6xl hover:scale-110 transition-transform active:scale-95 bg-gray-100 dark:bg-gray-800 p-4 rounded-2xl" data-c="paper">✋</button>
+        <button class="rps-btn text-6xl hover:scale-110 transition-transform active:scale-95 bg-gray-100 dark:bg-gray-800 p-4 rounded-2xl" data-c="scissors">✌️</button>
+    </div>
+</div>

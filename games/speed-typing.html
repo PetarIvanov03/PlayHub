@@ -1,0 +1,27 @@
+<div class="max-w-3xl mx-auto w-full mt-10 space-y-6">
+    <h2 class="text-3xl font-light mb-4">Speed Typing Test</h2>
+
+    <div class="grid grid-cols-3 gap-4">
+        <div class="bg-white dark:bg-gray-800 p-4 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 text-center">
+            <div class="text-xs font-medium text-gray-500 uppercase">WPM</div>
+            <div id="st-wpm" class="text-4xl font-bold text-indigo-600 dark:text-indigo-400">0</div>
+        </div>
+        <div class="bg-white dark:bg-gray-800 p-4 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 text-center">
+            <div class="text-xs font-medium text-gray-500 uppercase">Accuracy</div>
+            <div id="st-acc" class="text-4xl font-bold text-indigo-600 dark:text-indigo-400">100%</div>
+        </div>
+        <div class="bg-white dark:bg-gray-800 p-4 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 text-center">
+            <div class="text-xs font-medium text-gray-500 uppercase">Time Left</div>
+            <div id="st-time" class="text-4xl font-bold text-rose-600 dark:text-rose-400">30s</div>
+        </div>
+    </div>
+
+    <div class="relative bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 text-xl font-mono leading-relaxed h-48 overflow-hidden select-none" id="st-text-display">
+        <!-- Text injected here -->
+        <div id="st-overlay" class="absolute inset-0 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm flex flex-col items-center justify-center z-10 transition-opacity">
+            <button id="st-start" class="px-8 py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-full font-bold text-lg shadow-lg hover:-translate-y-1 transition-all">Start Test (30s)</button>
+        </div>
+    </div>
+
+    <input type="text" id="st-input" class="w-full opacity-0 absolute pointer-events-none" autocomplete="off">
+</div>

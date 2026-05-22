@@ -1,0 +1,11 @@
+<div class="max-w-5xl mx-auto w-full mt-10 space-y-4 h-[calc(100vh-10rem)] flex flex-col">
+    <div class="flex justify-between items-center">
+        <h2 class="text-2xl font-light">JSON Formatter</h2>
+        <div class="space-x-2">
+            <button id="jf-format" class="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg text-sm font-medium">Format</button>
+            <button id="jf-minify" class="px-4 py-2 bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 rounded-lg text-sm font-medium text-gray-900 dark:text-white">Minify</button>
+        </div>
+    </div>
+    <div id="jf-error" class="text-red-500 text-sm hidden font-medium"></div>
+    <textarea id="jf-input" class="flex-grow w-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl p-4 resize-none shadow-sm font-mono text-sm" placeholder="Paste JSON here..."></textarea>
+</div>

@@ -1,0 +1,40 @@
+<div class="max-w-md mx-auto w-full mt-10 space-y-6">
+    <h2 class="text-2xl font-light mb-4">BMR & BMI Calculator</h2>
+
+    <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 space-y-4">
+        <div class="flex space-x-4 mb-4">
+            <label class="flex items-center space-x-2">
+                <input type="radio" name="h-gender" value="m" checked class="text-indigo-600 focus:ring-indigo-500"> <span>Male</span>
+            </label>
+            <label class="flex items-center space-x-2">
+                <input type="radio" name="h-gender" value="f" class="text-indigo-600 focus:ring-indigo-500"> <span>Female</span>
+            </label>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4">
+            <div>
+                <label class="block text-sm font-medium text-gray-500 mb-1">Age</label>
+                <input type="number" id="h-age" class="w-full bg-gray-50 dark:bg-gray-900 border border-gray-300 dark:border-gray-700 rounded-lg p-2" value="25">
+            </div>
+            <div>
+                <label class="block text-sm font-medium text-gray-500 mb-1">Weight (kg)</label>
+                <input type="number" id="h-weight" class="w-full bg-gray-50 dark:bg-gray-900 border border-gray-300 dark:border-gray-700 rounded-lg p-2" value="70">
+            </div>
+            <div class="col-span-2">
+                <label class="block text-sm font-medium text-gray-500 mb-1">Height (cm)</label>
+                <input type="number" id="h-height" class="w-full bg-gray-50 dark:bg-gray-900 border border-gray-300 dark:border-gray-700 rounded-lg p-2" value="175">
+            </div>
+        </div>
+
+        <div class="mt-6 p-4 bg-gray-50 dark:bg-gray-900 rounded-xl grid grid-cols-2 gap-4 text-center">
+            <div>
+                <div class="text-xs text-gray-500 uppercase">BMI</div>
+                <div id="h-bmi" class="text-2xl font-bold text-indigo-600 dark:text-indigo-400">0.0</div>
+            </div>
+            <div>
+                <div class="text-xs text-gray-500 uppercase">BMR (kcal)</div>
+                <div id="h-bmr" class="text-2xl font-bold text-rose-600 dark:text-rose-400">0</div>
+            </div>
+        </div>
+    </div>
+</div>

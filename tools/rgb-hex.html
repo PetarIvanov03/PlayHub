@@ -1,0 +1,28 @@
+<div class="max-w-xl mx-auto w-full mt-10 space-y-6">
+    <h2 class="text-2xl font-light mb-4">RGB/HEX Gradient Generator</h2>
+
+    <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 flex flex-col items-center">
+        <div id="grad-preview" class="w-full h-40 rounded-xl mb-6 shadow-inner" style="background: linear-gradient(to right, #ff7e5f, #feb47b);"></div>
+
+        <div class="flex w-full space-x-6">
+            <div class="flex-1 space-y-2">
+                <label class="block text-sm font-medium text-gray-500">Color 1</label>
+                <input type="color" id="c1" value="#ff7e5f" class="w-full h-12 cursor-pointer rounded-lg border-0 bg-transparent p-0">
+                <input type="text" id="t1" value="#ff7e5f" class="w-full bg-gray-50 dark:bg-gray-900 border border-gray-300 dark:border-gray-700 rounded-lg p-2 font-mono text-sm text-center">
+            </div>
+            <div class="flex-1 space-y-2">
+                <label class="block text-sm font-medium text-gray-500">Color 2</label>
+                <input type="color" id="c2" value="#feb47b" class="w-full h-12 cursor-pointer rounded-lg border-0 bg-transparent p-0">
+                <input type="text" id="t2" value="#feb47b" class="w-full bg-gray-50 dark:bg-gray-900 border border-gray-300 dark:border-gray-700 rounded-lg p-2 font-mono text-sm text-center">
+            </div>
+        </div>
+
+        <div class="w-full mt-6">
+            <label class="block text-sm font-medium text-gray-500 mb-2">CSS Code</label>
+            <div class="flex">
+                <input type="text" id="css-out" class="w-full bg-gray-50 dark:bg-gray-900 border border-gray-300 dark:border-gray-700 rounded-l-lg p-3 font-mono text-sm" readonly>
+                <button id="copy-btn" class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 rounded-r-lg transition-colors font-medium text-sm">Copy</button>
+            </div>
+        </div>
+    </div>
+</div>

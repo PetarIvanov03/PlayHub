@@ -1,0 +1,17 @@
+<div class="max-w-fit mx-auto w-full mt-10 text-center">
+    <h2 class="text-3xl font-bold mb-4">Simon Says</h2>
+    <div class="mb-8">
+        <span class="text-xs uppercase font-bold text-gray-500">Level</span>
+        <span id="simon-score" class="text-2xl font-bold ml-2">1</span>
+    </div>
+
+    <div class="grid grid-cols-2 gap-4 w-64 h-64 mx-auto mb-8 pointer-events-none" id="simon-board">
+        <div class="bg-red-500 rounded-tl-full opacity-50 transition-opacity cursor-pointer simon-btn" data-c="0"></div>
+        <div class="bg-blue-500 rounded-tr-full opacity-50 transition-opacity cursor-pointer simon-btn" data-c="1"></div>
+        <div class="bg-yellow-400 rounded-bl-full opacity-50 transition-opacity cursor-pointer simon-btn" data-c="2"></div>
+        <div class="bg-green-500 rounded-br-full opacity-50 transition-opacity cursor-pointer simon-btn" data-c="3"></div>
+    </div>
+
+    <button id="simon-start" class="px-8 py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-full font-bold text-lg transition-colors">START</button>
+    <div id="simon-msg" class="mt-4 font-bold text-red-500 h-6"></div>
+</div>

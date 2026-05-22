@@ -1,0 +1,14 @@
+<div class="max-w-fit mx-auto w-full mt-10 text-center flex flex-col items-center">
+    <h2 class="text-3xl font-bold mb-4">Classic Pong</h2>
+    <div class="flex justify-between w-[400px] mb-2 px-4">
+        <div><span class="text-xs uppercase font-bold text-gray-500">You</span> <span id="pong-p1" class="text-2xl font-bold ml-2">0</span></div>
+        <div><span id="pong-p2" class="text-2xl font-bold mr-2">0</span> <span class="text-xs uppercase font-bold text-gray-500">CPU</span></div>
+    </div>
+    <div class="relative cursor-pointer" id="pong-container">
+        <canvas id="pong-canvas" width="400" height="300" class="bg-gray-900 border-2 border-gray-700 rounded-lg shadow-inner touch-none"></canvas>
+        <div id="pong-msg" class="absolute inset-0 flex flex-col items-center justify-center bg-black/50 text-white font-bold rounded-lg pointer-events-none">
+            <div class="text-2xl mb-2">Click to Start</div>
+            <div class="text-sm font-normal">Use Mouse/Touch to move</div>
+        </div>
+    </div>
+</div>
